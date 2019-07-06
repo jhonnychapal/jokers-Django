@@ -6,12 +6,16 @@ from jokersapp.models import Cliente
 from jokersapp.serializers import ClienteSerializer
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
 
 # Create your views here.
 
 @login_required
 def base(request):
     return render(request, 'base.html')
+
+def home(request):
+    return HttpResponse('Vista Home!')
 
 class UserViewSet(viewsets.ModelViewSet):
     """
@@ -31,3 +35,4 @@ class ClienteViewSet(viewsets.ModelViewSet):
     model = Cliente
     queryset = Cliente.objects.all()
     serializer_class = ClienteSerializer
+
