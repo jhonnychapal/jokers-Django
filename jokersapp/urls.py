@@ -4,6 +4,7 @@ from jokersapp import views
 
 urlpatterns=[
     path('',views.base, name='base'),
+    path('',views.home, name='home'),
     #path('category/',views.category,name='category-list'),
     #path('category/<int:category_id>/detail/',views.category_detail, name='category-detail'),
     #path('photo/',views.PhotoListView.as_view(), name='photo-list'),
