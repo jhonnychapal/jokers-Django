@@ -2,13 +2,23 @@
 
 {% block nav_links %}
     <li>
-        <a href="base.html">
+        <a href="{% url 'home' %}">
             <i class="fa fa-dashboard"></i> <span>Home</span>
         </a>
     </li>
     <li>
-        <a href="articulo">
+        <a href="{% url 'articulo-lista'  %}">
             <i class="fa fa-dashboard"></i> <span>Articulos</span>
+        </a>
+    </li>
+    <li>
+        <a href="{% url 'cliente-lista'  %}">
+            <i class="fa fa-dashboard"></i> <span>Clientes</span>
+        </a>
+    </li>
+    <li>
+        <a href="{% url 'factura-lista' %}">
+            <i class="fa fa-dashboard"></i> <span>Facturas</span>
         </a>
     </li>
     <li>

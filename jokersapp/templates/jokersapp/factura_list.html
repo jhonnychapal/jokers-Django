@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row well">
+    {% for p in object_list.all %}
+        <div class="col-md-4 well">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <table>
+                        <tr>
+                            <td><h2 class="panel-title">Numero: </h3></td>  
+                            <td><h3 class="panel-title">{{ p.no_Factura }}</h3></td>
+                        </tr>
+                        <tr>
+                            <td><h2 class="panel-title">Cliente:  </h3></td> 
+                            <td><h3 class="panel-title">{{ p.cliente }}</h3></td>
+                        </tr>
+                        <tr>
+                            <td><h2 class="panel-title">Fecha: </h3></td> 
+                            <td><h3 class="panel-title">{{ p.fech_Factura }}</h3></td>
+                        </tr>
+                        <tr>
+                            <td><h2 class="panel-title">Subtotal:  $ </h3></td> 
+                            <td><h3 class="panel-title">{{ p.subtotal }}</h3></td>
+                        </tr>
+                        <tr>
+                            <td><h2 class="panel-title">Iva:       $</h3></td> 
+                            <td><h3 class="panel-title">{{ p.iva }}</h3></td>
+                        </tr>
+                        <tr>
+                            <td><h2 class="panel-title">total:     $</h3></td> 
+                            <td><h3 class="panel-title">{{ p.total }}</h3></td>
+                        </tr>
+                    </table>
+                    
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    <div>
+        <a href="">Agregar nueva factura!</a>
+    </div>
+</div>
+{% endblock %}

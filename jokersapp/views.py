@@ -22,17 +22,11 @@ def home(request):
 class ArticuloListView(LoginRequiredMixin,ListView):
     model = Articulo
 
-@login_required
-def articulos(request):
-    articulos_lista = Articulo.objects.all()
-    context = {'articulos_lista':articulos_lista}
-    return render(request,'jokersapp/articulos_lista.html',context)
+class ClienteListView(LoginRequiredMixin,ListView):
+    model = Cliente
 
-@login_required
-def articulo_detalle(request):
-    articulo = Articulo.objects.get(id=id_Articulo)
-    context = {'object':articulo}
-    return render(request,'jokersapp/articulo_detalle.html',context)
+class FacturaListView(LoginRequiredMixin,ListView):
+    model = Factura
 
 
 class UserViewSet(viewsets.ModelViewSet):
