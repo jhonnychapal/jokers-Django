@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block section %}
+    <h2>Photo</h2>
+    <hr>
+{% endblock section %}
+{% block maincontent %}
+    <div class="row well">
+        {% for p in object_list.all %}
+            <div class="col-md-4 well">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{ p.nom_Articulo }}</h3>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div> 
+{% endblock maincontent %} 
+{% block content %}
+<div class="row well">
+    {% for p in object_list.all %}
+        <div class="col-md-4 well">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <table>
+                        <tr>
+                            <td><h2 class="panel-title">Nombre: </h3></td>  
+                            <td><h3 class="panel-title">{{ p.nom_Articulo }}</h3></td>
+                        </tr>
+                        <tr>
+                            <td><h2 class="panel-title">Valor: $ </h3></td> 
+                            <td><h3 class="panel-title">{{ p.vr_Unitario }}</h3></td>
+                        </tr>
+                        <tr>
+                            <td><h2 class="panel-title">Stock: </h3></td> 
+                            <td><h3 class="panel-title">{{ p.stock }}</h3></td>
+                        </tr>
+                    </table>
+                    
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
