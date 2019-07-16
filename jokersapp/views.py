@@ -48,3 +48,15 @@ class ClienteViewSet(viewsets.ModelViewSet):
     queryset = Cliente.objects.all()
     serializer_class = ClienteSerializer
 
+class ArticuloCreate(LoginRequiredMixin,CreateView):
+    model = Articulo
+    fields = '__all__'
+
+class ClienteCreate(LoginRequiredMixin,CreateView):
+    model = Cliente
+    fields = '__all__'
+
+class FacturaCreate(LoginRequiredMixin,CreateView):
+    model = Factura
+    fields = '__all__'
+

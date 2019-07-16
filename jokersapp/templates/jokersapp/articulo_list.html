@@ -1,4 +1,8 @@
 {% extends 'base.html' %}
+<html>
+    <head>
+        <title>JOKERS</title>
+    </head>
 {% block content %}
 <div class="row well">
     {% for p in object_list.all %}
@@ -25,7 +29,8 @@
         </div>
     {% endfor %}
     <div>
-        <a href="">Agregar nuevo articulo!</a>
+        <a href="{% url 'narticulo' %}">Agregar nuevo articulo!</a>
     </div>
 </div>
 {% endblock %}
+</html>
