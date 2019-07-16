@@ -27,6 +27,11 @@ class Articulo(models.Model):
     nom_Articulo = models.CharField(max_length=50)
     vr_Unitario = models.DecimalField(max_digits=15,decimal_places=2)
     stock = models.IntegerField()
+    
+    def get_absolute_url(self):
+        from django.urls import reverse
+        from jokersapp import views
+        return reverse('articulo-lista')
 
     def __str__(self):
         return(self.nom_Articulo)
