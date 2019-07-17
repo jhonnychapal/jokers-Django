@@ -29,7 +29,7 @@
                                 </tr>
                                 <tr>
                                     <td><h2 class="panel-title">Articulo:</h3></td> 
-                                    <td><h3 class="panel-title">{{ p.articulo }}</h3></td>
+                                    <td><h3 class="panel-title">{% for articulo in p.articulo.all %}{{articulo}}{% endfor %}</h3></td>
                                 </tr>
                                 <tr>
                                     <td><h2 class="panel-title">Cantidad:</h3></td> 
