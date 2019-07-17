@@ -8,6 +8,11 @@ class Cliente(models.Model):
     ciu_Cliente = models.CharField(max_length=50)
     tel_Cliente = models.CharField(max_length=20)
 
+    def get_absolute_url(self):
+        from django.urls import reverse
+        from jokersapp import views
+        return reverse('cliente-lista')
+
     def __str__(self):
         return (self.nom_Cliente)
 
@@ -18,6 +23,11 @@ class Factura(models.Model):
     subtotal = models.DecimalField(max_digits=15,decimal_places=2)
     iva = models.DecimalField(max_digits=15,decimal_places=2)
     total = models.DecimalField(max_digits=15,decimal_places=2)
+
+    def get_absolute_url(self):
+        from django.urls import reverse
+        from jokersapp import views
+        return reverse('factura-lista')
 
     def __str__(self):
         return(self.no_Factura)
@@ -42,6 +52,11 @@ class Detalle(models.Model):
     cantidad = models.IntegerField()
     total_Detalle = models.DecimalField(max_digits=15,decimal_places=2)
 
+    def get_absolute_url(self):
+        from django.urls import reverse
+        from jokersapp import views
+        return reverse('detalle-lista')
+
     def __str__(self):
         return(str(self.articulo) + "  " + str(self.cantidad))
 
@@ -52,6 +67,11 @@ class Proveedor(models.Model):
     dir_proveedor = models.CharField(max_length=50)
     ciu_proveedor = models.CharField(max_length=50)
     tel_proveedor = models.CharField(max_length=20)
+
+    def get_absolute_url(self):
+        from django.urls import reverse
+        from jokersapp import views
+        return reverse('proveedor-lista')
 
     class Meta:
         verbose_name_plural = "Proveedores"
@@ -66,6 +86,11 @@ class Compra(models.Model):
     num_factura = models.CharField(max_length=20)
     articulo = models.ManyToManyField(Articulo)
     cantidad = models.IntegerField()
+
+    def get_absolute_url(self):
+        from django.urls import reverse
+        from jokersapp import views
+        return reverse('compra-lista')
 
     def __str__(self):
         return(self.no_compra)

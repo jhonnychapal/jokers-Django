@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block page_name %}
+    <h1 align="center">Proveedores</h1>
+{% endblock %}
+{% block content %}
+<div class="row well">
+    <div class="container">
+        <div class="row">
+            {% for p in object_list.all %}
+                <div class="col-md-4 well">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <table>
+                                <tr>
+                                    <td><h2 class="panel-title">Nit proveedor:</h3></td>  
+                                    <td><h3 class="panel-title">{{ p.nit_Proveedor }}</h3></td>
+                                </tr>
+                                <tr>
+                                    <td><h2 class="panel-title">Nombre:</h3></td> 
+                                    <td><h3 class="panel-title">{{ p.nom_Proveedor }}</h3></td>
+                                </tr>
+                                <tr>
+                                    <td><h2 class="panel-title">Direccion:</h3></td> 
+                                    <td><h3 class="panel-title">{{ p.dir_proveedor }}</h3></td>
+                                </tr>
+                                <tr>
+                                    <td><h2 class="panel-title">Ciudad:</h3></td> 
+                                    <td><h3 class="panel-title">{{ p.ciu_proveedor }}</h3></td>
+                                </tr>
+                                <tr>
+                                    <td><h2 class="panel-title">Telefono:</h3></td> 
+                                    <td><h3 class="panel-title">{{ p.tel_proveedor }}</h3></td>
+                                </tr>
+                            </table>
+                            
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div>
+        <a href="{% url 'nproveedor' %}" class="btn btn-primary">Agregar nuevo proveedor!</a>
+    </div>
+</div>
+{% endblock %}

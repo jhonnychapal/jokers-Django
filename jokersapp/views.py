@@ -28,6 +28,14 @@ class ClienteListView(LoginRequiredMixin,ListView):
 class FacturaListView(LoginRequiredMixin,ListView):
     model = Factura
 
+class DetalleListView(LoginRequiredMixin,ListView):
+    model = Detalle
+
+class ProveedorListView(LoginRequiredMixin,ListView):
+    model = Proveedor
+
+class CompraListView(LoginRequiredMixin,ListView):
+    model = Compra
 
 class UserViewSet(viewsets.ModelViewSet):
     """
@@ -58,5 +66,17 @@ class ClienteCreate(LoginRequiredMixin,CreateView):
 
 class FacturaCreate(LoginRequiredMixin,CreateView):
     model = Factura
+    fields = '__all__'
+
+class DetalleCreate(LoginRequiredMixin,CreateView):
+    model = Detalle
+    fields = '__all__'
+
+class ProveedorCreate(LoginRequiredMixin,CreateView):
+    model = Proveedor
+    fields = '__all__'
+
+class CompraCreate(LoginRequiredMixin,CreateView):
+    model = Compra
     fields = '__all__'
 

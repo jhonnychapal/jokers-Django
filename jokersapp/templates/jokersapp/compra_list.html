@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block page_name %}
-    <h1 align="center">Facturas</h1>
+    <h1 align="center">Compras</h1>
 {% endblock %}
 {% block content %}
 <div class="row well">
@@ -12,28 +12,28 @@
                         <div class="panel-heading">
                             <table>
                                 <tr>
-                                    <td><h2 class="panel-title">Numero: </h3></td>  
-                                    <td><h3 class="panel-title">{{ p.no_Factura }}</h3></td>
+                                    <td><h2 class="panel-title">N. Compra: </h3></td>  
+                                    <td><h3 class="panel-title">{{ p.no_compra }}</h3></td>
                                 </tr>
                                 <tr>
-                                    <td><h2 class="panel-title">Cliente:  </h3></td> 
-                                    <td><h3 class="panel-title">{{ p.cliente }}</h3></td>
+                                    <td><h2 class="panel-title">Proveedor:  </h3></td> 
+                                    <td><h3 class="panel-title">{{ p.proveedor }}</h3></td>
                                 </tr>
                                 <tr>
                                     <td><h2 class="panel-title">Fecha: </h3></td> 
-                                    <td><h3 class="panel-title">{{ p.fech_Factura }}</h3></td>
+                                    <td><h3 class="panel-title">{{ p.fech_Compra }}</h3></td>
                                 </tr>
                                 <tr>
-                                    <td><h2 class="panel-title">Subtotal:  $ </h3></td> 
-                                    <td><h3 class="panel-title">{{ p.subtotal }}</h3></td>
+                                    <td><h2 class="panel-title">N. Factura:</h3></td> 
+                                    <td><h3 class="panel-title">{{ p.num_factura }}</h3></td>
                                 </tr>
                                 <tr>
-                                    <td><h2 class="panel-title">Iva:       $</h3></td> 
-                                    <td><h3 class="panel-title">{{ p.iva }}</h3></td>
+                                    <td><h2 class="panel-title">Articulo:</h3></td> 
+                                    <td><h3 class="panel-title">{{ p.articulo }}</h3></td>
                                 </tr>
                                 <tr>
-                                    <td><h2 class="panel-title">total:     $</h3></td> 
-                                    <td><h3 class="panel-title">{{ p.total }}</h3></td>
+                                    <td><h2 class="panel-title">Cantidad:</h3></td> 
+                                    <td><h3 class="panel-title">{{ p.cantidad }}</h3></td>
                                 </tr>
                             </table>
                             
@@ -44,7 +44,7 @@
         </div>
     </div>
     <div>
-        <a href="{% url 'nfactura' %}" class="btn btn-primary">Agregar nueva factura!</a>
+        <a href="{% url 'ncompra' %}" class="btn btn-primary">Agregar nueva compra!</a>
     </div>
 </div>
 {% endblock %}

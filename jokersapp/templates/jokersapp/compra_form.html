@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% block page_name %}
-    <h1 align="center">Agregar factura</h1>
+    <h1 align="center">Agregar compra</h1>
 {% endblock %}
 {% block content %}
     <form enctype="multipart/form-data" method="post">{% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Save</button>
-        <a class="btn" href="{% url 'factura-lista' %}">Cancel</a>
+        <a class="btn" href="{% url 'compra-lista' %}">Cancel</a>
     </form>
 {% endblock %}

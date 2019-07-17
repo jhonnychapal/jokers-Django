@@ -2,22 +2,37 @@
 {% block nav_links %}
     <li>
         <a href="{% url 'home' %}">
-            <i class="fa fa-dashboard"></i> <span>Home</span>
+            <i class="fa fa-home"></i> <span>Home</span>
         </a>
     </li>
     <li>
         <a href="{% url 'articulo-lista'  %}">
-            <i class="fa fa-dashboard"></i> <span>Articulos</span>
+            <i class="fa fa-circle"></i> <span>Articulos</span>
         </a>
     </li>
     <li>
         <a href="{% url 'cliente-lista'  %}">
-            <i class="fa fa-dashboard"></i> <span>Clientes</span>
+            <i class="fa fa-user"></i> <span>Clientes</span>
+        </a>
+    </li>
+    <li>
+        <a href="{% url 'compra-lista' %}">
+            <i class="fa fa-money"></i> <span>Compras</span>
+        </a>
+    </li>
+    <li>
+        <a href="{% url 'detalle-lista' %}">
+            <i class="fa fa-list-ol"></i> <span>Detalles</span>
         </a>
     </li>
     <li>
         <a href="{% url 'factura-lista' %}">
-            <i class="fa fa-dashboard"></i> <span>Facturas</span>
+            <i class="fa fa-list-alt"></i> <span>Facturas</span>
+        </a>
+    </li>
+    <li>
+        <a href="{% url 'proveedor-lista' %}">
+            <i class="fa fa-truck"></i> <span>Proveedores</span>
         </a>
     </li>
 {% endblock nav_links %}

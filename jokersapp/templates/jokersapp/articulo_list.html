@@ -3,6 +3,9 @@
     <head>
         <title>JOKERS</title>
     </head>
+{% block page_name %}
+    <h1 align="center">Articulos</h1>
+{% endblock %}
 {% block content %}
 <div class="row well">
     <div class="container">
@@ -32,7 +35,7 @@
         </div>
     </div>
     <div>   
-        <a href="{% url 'narticulo' %}">Agregar nuevo articulo!</a>
+        <a href="{% url 'narticulo' %}" class="btn btn-primary">Agregar nuevo articulo!</a>
     </div>
 </div>
 {% endblock %}
